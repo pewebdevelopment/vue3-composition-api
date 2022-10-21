@@ -11,10 +11,12 @@
 
     <div class="counter">
 
-        <button @click="decreaseValue">Decrease </button>
-        The present value is: {{counter}}
-        <button @click="increaseValue">Increase </button>
 
+        <div class="flex justify-content-center">
+            <button @click="decreaseValue">Decrease </button>
+            <h1>{{counter}}</h1>
+            <button @click="increaseValue">Increase </button>
+        </div>
 
     </div>
 
@@ -23,30 +25,77 @@
 
 </template>
 
-<script>
-export default {
-    data() {
+<script setup>
 
-        return {
+import { ref } from 'vue';
 
-            counter: 0,
+const counter = ref(0);
 
-        }
+const increaseValue = () => {
 
-    },
+            counter.value++;
+   }
 
-    methods: {
-        increaseValue: function () {
-            this.counter++;
-        },
+     const decreaseValue = () => {
 
-        decreaseValue: function () {
-            this.counter--;
-        }
-    }
+         counter.value--;
+     }
 
 
-}
+
+// export default {
+// }
+    
+    // setup() {
+
+    //     const counter = ref(0);
+
+    //     const increaseValue = () => {
+
+    //         counter.value++;
+    //     }
+
+    //     const decreaseValue = () => {
+
+    //         counter.value--;
+    //     }
+
+    //     return {
+    //         counter,
+    //         increaseValue,
+    //         decreaseValue
+    //     }
+
+    // }
+
+
+
+
+
+    // Options API 
+    // 
+    // // data() {
+
+    //     return {
+
+    //         counter: 0,
+
+    //     }
+
+    // },
+
+    // methods: {
+    //     increaseValue: function () {
+    //         this.counter++;
+    //     },
+
+    //     decreaseValue: function () {
+    //         this.counter--;
+    //     }
+    // }
+
+
+
 
 
 </script>
