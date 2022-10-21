@@ -2,7 +2,7 @@
     <div>
 
 <h1 class="Home">
-Home Component 
+Home
 </h1>
     </div>
 </template>
